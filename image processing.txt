@@ -1,0 +1,17 @@
+%Read the image
+img = imread('image.jpg');
+
+%Get the size (rows and columns) of the image 
+[r,c] = size(img);
+id=fix(r/3)
+%Wrire code to split the image into three equal parts and store them in B, G, R channels
+B=img(1:id,:);
+G=img(id+1:2*id,:);
+R=img(2*id+1:r,:);
+
+
+%concatenate R,G,B channels and assign the RGB image to ColorImg variable
+ColorImg(:,:,1) = R;
+ColorImg(:,:,2) = G;
+ColorImg(:,:,3) = B;
+imshow(ColorImg)
